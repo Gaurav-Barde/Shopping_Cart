@@ -10,8 +10,12 @@ export const productData = [
     price: 9.99,
   },
   {
-    id: 1,
+    id: 3,
     name: "Camera",
     price: 24.99,
   },
 ];
+
+export const getProduct = (id) => {
+  return productData.find((product) => product.id === id);
+};
