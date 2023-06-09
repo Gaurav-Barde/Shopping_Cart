@@ -38,8 +38,10 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const deleteAllProductsFromCart = (id) =>
+  const deleteAllProductsFromCart = (id) => {
+    console.log(cartProducts);
     setCartProducts(cartProducts.filter((item) => item.id !== id));
+  };
 
   const removeOneProductFromCart = (id) => {
     if (getProductsQuantity(id) === 1) {
@@ -70,17 +72,15 @@ const CartProvider = ({ children }) => {
   const getTotalCost = () => {
     let totalCost = 0;
     if (getTotalProductQuantity() !== 0) {
-      totalCost = Math.round(
-        cartProducts
-          .map((product) => {
-            const price = getProduct(product.id)?.price;
-            return product.quantity * price;
-          })
-          .reduce((acc, current) => acc + current)
-      );
+      totalCost = cartProducts
+        .map((product) => {
+          const price = getProduct(product.id)?.price;
+          return product.quantity * price;
+        })
+        .reduce((acc, current) => acc + current);
     }
 
-    return totalCost;
+    return totalCost.toFixed(2);
   };
 
   const contextValue = {

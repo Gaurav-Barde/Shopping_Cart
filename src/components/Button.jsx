@@ -1,7 +1,7 @@
 import React from "react";
 
-const Button = ({ title, onClickHandler, id, variant }) => {
-  const bg = variant === "danger" ? "rose" : "lime";
+const Button = ({ title, onClickHandler, id, variant, background }) => {
+  const bg = background ? background : variant === "danger" ? "rose" : "lime";
 
   return (
     <button
