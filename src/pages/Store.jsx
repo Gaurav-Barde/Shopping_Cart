@@ -5,9 +5,11 @@ import ProductCard from "../components/ProductCard";
 function Store() {
   return (
     <div>
-      <h1 className="font-semibold text-3xl text-center mt-6">Products Page</h1>
-      <div className="flex justify-between flex-col md:flex-row sm:items-center m-8 flex-wrap">
-        {productData.map((product, index) => (
+      <h1 className="font-semibold text-3xl text-center mt-6">
+        Welcome to the Store
+      </h1>
+      <div className="grid grid-flow-row lg:grid-flow-col gap-2 xl:gap-8 m-8">
+        {productData.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
