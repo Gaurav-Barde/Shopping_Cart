@@ -8,9 +8,7 @@ function ProductCard({ product }) {
     getProductsQuantity,
     addProductToCart,
     removeOneProductFromCart,
-    deleteAllProductsFromCart,
   } = useContext(CartContext);
-
   return (
     <div className="md:w-1/4 sm:w-1/2 text-center border-2 border-gray-750  p-4 py-8 my-4">
       <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
@@ -18,16 +16,18 @@ function ProductCard({ product }) {
       <Button
         title="Add to Cart"
         id={product.id}
-        onClickHandler={addProductToCart}
+        onClickHandler={() => addProductToCart(product.id)}
       />
       <p className="mt-3">{getProductsQuantity(product.id)}</p>
 
-      <Button
-        title="Remove"
-        id={product.id}
-        onClickHandler={removeOneProductFromCart}
-        variant="danger"
-      />
+      {getProductsQuantity(product.id) !== 0 ? (
+        <Button
+          title="Remove"
+          id={product.id}
+          onClickHandler={removeOneProductFromCart}
+          variant="danger"
+        />
+      ) : null}
     </div>
   );
 }
