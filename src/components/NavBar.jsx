@@ -15,7 +15,10 @@ const NavBar = () => {
     <>
       <div className="flex justify-between items-center">
         <div>Ecommerce Store</div>
-        <button className="bg-blue-200 p-2 rounded-md" onClick={handleShow}>
+        <button
+          className={`bg-teal-500 hover:bg-teal-400 text-white font-bold py-2 px-4 border-b-4 my-4 border-teal-700 hover:border-teal-500 rounded`}
+          onClick={handleShow}
+        >
           Cart {getTotalProductQuantity()} Items
         </button>
       </div>

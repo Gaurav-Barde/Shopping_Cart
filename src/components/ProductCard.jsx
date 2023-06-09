@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
+import Button from "./Button";
 
 function ProductCard({ product }) {
   const {
@@ -11,28 +12,22 @@ function ProductCard({ product }) {
   } = useContext(CartContext);
 
   return (
-    <div className="w-1/4 text-center border-2 border-gray-750  p-4 py-8">
+    <div className="md:w-1/4 sm:w-1/2 text-center border-2 border-gray-750  p-4 py-8 my-4">
       <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
       <h3>${product.price}</h3>
-      <button
-        className="text-white bg-blue-500 p-2 mt-6 rounded-md"
-        onClick={() => addProductToCart(product.id)}
-      >
-        Add to Cart
-      </button>
+      <Button
+        title="Add to Cart"
+        id={product.id}
+        onClickHandler={addProductToCart}
+      />
       <p className="mt-3">{getProductsQuantity(product.id)}</p>
-      <button
-        className="text-white bg-blue-500 p-2 mt-3 rounded-md"
-        onClick={() => removeOneProductFromCart(product.id)}
-      >
-        Remove
-      </button>
-      <button
-        className="text-white bg-blue-500 p-2 mt-6 rounded-md"
-        onClick={() => deleteAllProductsFromCart(product.id)}
-      >
-        Delete All
-      </button>
+
+      <Button
+        title="Remove"
+        id={product.id}
+        onClickHandler={removeOneProductFromCart}
+        variant="danger"
+      />
     </div>
   );
 }

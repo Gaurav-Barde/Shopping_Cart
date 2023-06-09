@@ -59,9 +59,10 @@ const CartProvider = ({ children }) => {
   const getTotalProductQuantity = () => {
     let totalQuantity = 0;
     if (cartProducts.length !== 0) {
-      totalQuantity = cartProducts.reduce((acc, current) => {
-        return acc + current.quantity;
-      }, 0);
+      totalQuantity = cartProducts.reduce(
+        (acc, current) => acc + current.quantity,
+        0
+      );
       return totalQuantity;
     }
     return totalQuantity;

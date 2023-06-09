@@ -6,7 +6,7 @@ function Store() {
   return (
     <div>
       <h1 className="font-semibold text-3xl text-center mt-6">Products Page</h1>
-      <div className="flex justify-between m-8">
+      <div className="flex justify-between flex-col md:flex-row sm:items-center m-8 flex-wrap">
         {productData.map((product, index) => (
           <ProductCard key={product.id} product={product} />
         ))}
