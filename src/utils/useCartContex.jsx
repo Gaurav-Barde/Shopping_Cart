@@ -2,16 +2,27 @@ import { useContext } from "react";
 import { CartContext } from "../CartContext";
 
 const useCartContext = () => {
-  const context = useContext(CartContext);
+  const {
+    items,
+    getProductsQuantity,
+    addProductToCart,
+    removeOneProductFromCart,
+    deleteAllProductsFromCart,
+    getTotalProductQuantity,
+    getTotalCost,
+  } = useContext(CartContext);
+
+  const totalQuantity = getTotalProductQuantity();
+  const totalCost = getTotalCost();
 
   return {
-    items: context.items,
-    getProductsQuantity: context.getProductsQuantity,
-    addProductToCart: context.addProductToCart,
-    removeOneProductFromCart: context.removeOneProductFromCart,
-    deleteAllProductsFromCart: context.deleteAllProductsFromCart,
-    getTotalProductQuantity: context.getTotalProductQuantity,
-    getTotalCost: context.getTotalCost,
+    items,
+    getProductsQuantity,
+    addProductToCart,
+    removeOneProductFromCart,
+    deleteAllProductsFromCart,
+    totalQuantity,
+    totalCost,
   };
 };
 export default useCartContext;
