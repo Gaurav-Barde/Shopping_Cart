@@ -38,10 +38,8 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const deleteAllProductsFromCart = (id) => {
-    console.log(cartProducts);
+  const deleteAllProductsFromCart = (id) =>
     setCartProducts(cartProducts.filter((item) => item.id !== id));
-  };
 
   const removeOneProductFromCart = (id) => {
     if (getProductsQuantity(id) === 1) {
