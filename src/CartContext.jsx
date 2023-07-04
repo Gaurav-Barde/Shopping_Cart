@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { getProduct } from "./mocks/Product_Data";
+import useFetch from "./utils/useFetch";
+import { DOLLAR_PRICE } from "./utils/constants";
 
 export const CartContext = createContext({
   item: [],
@@ -13,6 +14,8 @@ export const CartContext = createContext({
 
 const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
+
+  const { getProduct } = useFetch();
 
   const getProductsQuantity = (id) => {
     const quantity = cartProducts.find(
@@ -72,7 +75,7 @@ const CartProvider = ({ children }) => {
     if (getTotalProductQuantity() !== 0) {
       totalCost = cartProducts
         .map((product) => {
-          const price = getProduct(product.id)?.price;
+          const price = getProduct(product.id)?.price * DOLLAR_PRICE;
           return product.quantity * price;
         })
         .reduce((acc, current) => acc + current);
