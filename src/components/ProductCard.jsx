@@ -15,11 +15,11 @@ function ProductCard({ product }) {
   const quantity = getProductsQuantity(product.id);
 
   return (
-    <div className="text-center border-4 border-stone-500 p-4 py-8 my-4">
+    <div className="text-center border-4 border-stone-500 p-1 py-8 my-4">
       <h1 className="text-2xl font-semibold mb-2">{product.title}</h1>
       <h3> ₹{Math.round(product.price * DOLLAR_PRICE)}</h3>
       {quantity ? (
-        <div className="grid grid-flow-col grid-cols-2 gap-1 sm:gap-6 xs:gap-3 items-center">
+        <div className="grid grid-flow-col grid-cols-2 gap-1 sm:gap-2 xs:gap-3 items-center">
           <>
             <span className="font-semibold text-lg col-span-2">
               In Cart: {getProductsQuantity(product.id)}
@@ -39,7 +39,7 @@ function ProductCard({ product }) {
             />
           </>
           <Button
-            title="Reset"
+            title="↻"
             id={product.id}
             onClickHandler={deleteAllProductsFromCart}
             variant="danger"
