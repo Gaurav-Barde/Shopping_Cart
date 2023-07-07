@@ -4,6 +4,7 @@ import Store from "./pages/Store";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import CartProvider from "./CartContext";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+      <Toaster />
     </CartProvider>
   );
 }
