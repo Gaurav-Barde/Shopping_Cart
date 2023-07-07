@@ -1,2 +1,41 @@
 export const PRODUCTS_API_KEY = "https://dummyjson.com/products";
 export const DOLLAR_PRICE = 81.9;
+
+export const stripeProducts = [
+  { title: "iPhone 9", id: "price_1NQ9oGSGdFX7eI9ixEfpqTaY" },
+  { title: "iPhone X", id: "price_1NQPQJSGdFX7eI9i5dkEOSZs" },
+  { title: "Samsung Universe 9", id: "price_1NQPRcSGdFX7eI9ihsQ8zc3s" },
+  { title: "OPPOF19", id: "price_1NQPT9SGdFX7eI9iEYMItmtF" },
+  { title: "Huawei P30", id: "price_1NQPTzSGdFX7eI9iDQAFZPg0" },
+  { title: "MacBook Pro", id: "price_1NQPUuSGdFX7eI9iV52sQ1zt" },
+  { title: "Samsung Galaxy Book", id: "price_1NQPX8SGdFX7eI9iWgIpku3c" },
+  { title: "Microsoft Surface Laptop 4", id: "price_1NQPY8SGdFX7eI9iz0CXWBXO" },
+  { title: "Infinix INBOOK", id: "price_1NQPZ3SGdFX7eI9iB3uArlRQ" },
+  { title: "HP Pavilion 15-DK1056WM", id: "price_1NQPZmSGdFX7eI9iPEO6mDgc" },
+  { title: "perfume Oil", id: "price_1NQPaiSGdFX7eI9i4QyfUDF4" },
+  { title: "Brown Perfume", id: "price_1NQPc0SGdFX7eI9iMEHa5iJV" },
+  { title: "Fog Scent Xpressio Perfume", id: "price_1NQPcoSGdFX7eI9iq9wG23GO" },
+  {
+    title: "Non-Alcoholic Concentrated Perfume Oil",
+    id: "price_1NQPdiSGdFX7eI9i2CWOAyQx",
+  },
+  { title: "Eau De Perfume Spray", id: "price_1NQPecSGdFX7eI9igOGg5zy1" },
+  { title: "Hyaluronic Acid Serum", id: "price_1NQPflSGdFX7eI9i8vzDftOe" },
+  { title: "Tree Oil 30ml", id: "price_1NQPgRSGdFX7eI9iNqLGR4xo" },
+  { title: "Oil Free Moisturizer 100ml", id: "price_1NQPgwSGdFX7eI9iX2RUlL6M" },
+  { title: "Skin Beauty Serum.", id: "price_1NQPhrSGdFX7eI9i77ZSLaeK" },
+  {
+    title: "Freckle Treatment Cream- 15gm",
+    id: "price_1NQPikSGdFX7eI9i5NWBCky2",
+  },
+  { title: "- Daal Masoor 500 grams", id: "price_1NQPkYSGdFX7eI9idbxM8AS4" },
+  { title: "Elbow Macaroni - 400 gm", id: "price_1NQPlbSGdFX7eI9imsHjEuNE" },
+  { title: "Orange Essence Food Flavou", id: "price_1NQPmFSGdFX7eI9iyMWNuhds" },
+  { title: "cereals muesli fruit nuts", id: "price_1NQPnASGdFX7eI9ioldEa8Q4" },
+  { title: "Gulab Powder 50 Gram", id: "price_1NQPnrSGdFX7eI9imJhKCH6H" },
+  { title: "Plant Hanger For Home", id: "price_1NQPoVSGdFX7eI9iYuQprAS9" },
+  { title: "Flying Wooden Bird", id: "price_1NQPpJSGdFX7eI9i6oknoTsO" },
+  { title: "3D Embellishment Art Lamp", id: "price_1NQPpxSGdFX7eI9iYtAnsiHn" },
+  { title: "Handcraft Chinese style", id: "price_1NQPu1SGdFX7eI9iXbigsd7i" },
+  { title: "Key Holder", id: "price_1NQPucSGdFX7eI9ie32UjnYK" },
+];
