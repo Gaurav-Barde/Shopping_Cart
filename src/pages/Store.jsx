@@ -3,7 +3,7 @@ import ProductList from "../components/ProductList";
 function Store() {
   return (
     <div>
-      <h1 className="font-semibold text-3xl text-center mt-6">
+      <h1 className="font-semibold text-3xl text-center mt-6 text-blue-700">
         Welcome to the Store
       </h1>
       <ProductList />
