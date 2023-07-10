@@ -1,8 +1,8 @@
+import { useState } from "react";
 import ProductDetails from "./ProductDetails";
 import closeBtn from "../assets/icons/close.png";
 import Button from "./Button";
 import useCartContext from "../utils/useCartContex";
-import { useState } from "react";
 import toast from "react-hot-toast";
 
 const Modal = ({ handleClose }) => {
@@ -28,6 +28,21 @@ const Modal = ({ handleClose }) => {
     }
   };
 
+  function throttlePurchaseItems(fn, delay) {
+    let executed = true;
+    return function () {
+      if (executed) {
+        fn();
+        executed = false;
+        setTimeout(() => {
+          executed = true;
+        }, delay);
+      }
+    };
+  }
+
+  const betterPurchaseItems = throttlePurchaseItems(purchaseItems, 3000);
+
   if (error) {
     toast(error);
     setError(null);
@@ -47,7 +62,7 @@ const Modal = ({ handleClose }) => {
           <h3 className="text-2xl font-semibold">Total: ₹{totalCost}</h3>
           <Button
             title={"Purchase Items"}
-            onClickHandler={purchaseItems}
+            onClickHandler={betterPurchaseItems}
             background={"blue"}
           />
         </>
