@@ -6,7 +6,7 @@ const Button = ({ title, onClickHandler, id, variant, background }) => {
   return (
     <button
       className={`bg-${bg}-600 hover:bg-${bg}-400 text-slate-100 font-bold py-2 px-4 border-b-4 my-4 border-${bg}-700 hover:border-${bg}-500 rounded`}
-      onClick={() => onClickHandler(id)}
+      onClick={() => (id ? onClickHandler(id) : onClickHandler())}
     >
       {title}
     </button>
