@@ -1,23 +1,39 @@
 import NavBar from "./components/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Store from "./pages/Store";
-import Success from "./pages/Success";
-import Cancel from "./pages/Cancel";
 import CartProvider from "./CartContext";
 import { Toaster } from "react-hot-toast";
+import ErrorBoundary from "./components/ErrorBoundary";
+import ViewCart from "./components/ViewCart";
+import MainContainer from "./components/MainContainer";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <ErrorBoundary>
+        <NavBar />
+        <MainContainer />
+      </ErrorBoundary>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <Store />,
+      },
+      {
+        path: "viewcart",
+        element: <ViewCart />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <CartProvider children={"Children"}>
       <div className="p-16">
-        <NavBar />
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Store />}></Route>
-            <Route index path="success" element={<Success />}></Route>
-            <Route path="cancel" element={<Cancel />}></Route>
-          </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </div>
       <Toaster />
     </CartProvider>
